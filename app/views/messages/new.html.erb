@@ -1,4 +1,5 @@
 <%= form_for @message, url: contact_path do |message_form| %>
+
   <fieldset>
     <div class="field">
       <%= message_form.text_field :name, placeholder: "Name" %>
@@ -12,6 +13,10 @@
       <%= message_form.text_area :content, placeholder: "Message"%>
     </div>
   </fieldset>
+  
+
+  
+  
   
   <fieldset>
     <div class="field">
