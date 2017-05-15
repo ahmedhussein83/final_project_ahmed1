@@ -37,7 +37,7 @@
 <h3>Nearby locations</h3>
 <ul>
 
-<% for hotel in @hotel.nearbys(20) %>
+<% for hotel in @hotel.nearbys(10) %>
 
  <li><%= link_to hotel.address, hotel %> (<%= hotel.distance.round(2) %> miles)</li>
 
