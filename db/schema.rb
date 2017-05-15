@@ -11,12 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515172421) do
+ActiveRecord::Schema.define(version: 20170515183711) do
+
+  create_table "books", force: :cascade do |t|
+    t.date     "check_in"
+    t.date     "check_out"
+    t.integer  "adults"
+    t.integer  "kids"
+    t.integer  "hotel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "books", ["hotel_id"], name: "index_books_on_hotel_id"
 
   create_table "homes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hotels", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "email"
+    t.text     "description"
+    t.text     "special_offers"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

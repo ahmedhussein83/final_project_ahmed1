@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hotel.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @hotel.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @hotel.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @hotel.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hotel.description %>
+</p>
+
+<p>
+  <strong>Special offers:</strong>
+  <%= @hotel.special_offers %>
+</p>
+
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@hotel.latitude}%2C#{@hotel.longitude}" %>
+<br>
+
+<h3>Nearby locations</h3>
+<ul>
+
+<% for hotel in @hotel.nearbys(20) %>
+
+ <li><%= link_to hotel.address, hotel %> (<%= hotel.distance.round(2) %> miles)</li>
+
+<% end %>
+
+</ul>
+<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
+<%= link_to 'Back', hotels_path %>

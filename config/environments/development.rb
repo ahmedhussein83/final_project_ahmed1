@@ -2,6 +2,8 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'https://final-final-ahmed-ahmed83.c9users.io' }
   
+  
+  
   config.action_mailer.smtp_settings = {
        :address              => "smtp.gmail.com",
        :port                 =>  587,
@@ -9,6 +11,8 @@ Rails.application.configure do
        :password             =>  '8271395Ah',
        :authentication       => 'plain',
        :enable_starttls_auto => true  }
+       
+       
   config.cache_classes = false
 
   # Do not eager load code on boot.
