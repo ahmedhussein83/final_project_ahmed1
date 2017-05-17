@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'activeadmin'
+# gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
 gem 'geocoder'
 gem 'devise'

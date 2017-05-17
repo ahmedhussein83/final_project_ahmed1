@@ -8,5 +8,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit({ roles: [] }, :email, :password, :username) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit({ keys: [:username] }, :email, :password, :password_confirmation,:first_name, :last_name,:date_of_birth,:phone_number) }
 
-   end
+     end
 end
